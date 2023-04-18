@@ -6,7 +6,7 @@ import dbCards from './dbCards';
 // App Config
 const app = express();
 const port = process.env.PORT || 8001;
-const connection_url = 'mongosh "mongodb+srv://cluster0.hvpqalm.mongodb.net/tinderdb" --apiVersion 1 --username imichalopo';
+const connection_url = 'mongodb+srv://imichalopo:tASRnIlcPb1OBwgl@cluster0.hvpqalm.mongodb.net/test';
  
 // Middlewares
 
@@ -29,7 +29,7 @@ app.post('/tinder/cards', (req, res) => {
         } else {
             res.status(201).send(data)
         }
-    })
+    });
 });
 
 app.get('/tinder/cards', (req, res) => {
@@ -39,8 +39,8 @@ app.get('/tinder/cards', (req, res) => {
         } else {
             res.status(200).send(data)
         }
-    })
-})
+    });
+});
 
 // Listener
 app.listen(port, () => console.log('listening on localhost: '+port));
